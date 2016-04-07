@@ -1,4 +1,4 @@
-#Demo of using Kestrel with F#
+#Demo of using Kestrel with F♯
 
 Working with `dotnet cli 1.0.0-beta-002071`
 
