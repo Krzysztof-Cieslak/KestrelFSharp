@@ -5,6 +5,7 @@
   },
   "compilerName": "fsc",
   "compileFiles": [
+    "Calc.fs",
     "Program.fs"
   ],
   "dependencies": {
