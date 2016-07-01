@@ -1,23 +1,36 @@
 {
   "version": "1.0.0-*",
-  "compilationOptions": {
-    "emitEntryPoint": true
+  "buildOptions": {
+    "compilerName": "fsc",
+    "emitEntryPoint": true,
+    "compile": { "includeFiles": [
+      "Calc.fs",
+      "Program.fs"
+    ]},
+    "debugType": "portable"
   },
-  "compilerName": "fsc",
-  "compileFiles": [
-    "Calc.fs",
-    "Program.fs"
-  ],
+  "tools": {
+    "dotnet-compile-fsc": {
+      "version": "1.0.0-*",
+      "imports": [
+        "dnxcore50",
+        "portable-net45+win81",
+        "netstandard1.3"
+      ]
+    }
+  },  
   "dependencies": {
-    "Microsoft.FSharp.Core.netcore": "1.0.0-alpha-160316",
+    "Microsoft.FSharp.Core.netcore": "1.0.0-alpha-*",
     "Microsoft.NETCore.App": {
       "type": "platform",
-      "version": "1.0.0-rc2-23925"
+      "version": "1.0.0"
     },
-    "Microsoft.AspNetCore.Server.Kestrel": "1.0.0-*"
+    "Microsoft.AspNetCore.Server.Kestrel": "1.0.0",
+    "Microsoft.Extensions.Configuration": "1.0.0",
+    "Microsoft.Extensions.Configuration.CommandLine": "1.0.0"
   },
   "frameworks": {
-    "netstandardapp1.5": {
+    "netcoreapp1.0": {
       "imports": [
         "portable-net45+win8",
         "dnxcore50"
