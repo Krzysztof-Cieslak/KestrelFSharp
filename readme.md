@@ -1,6 +1,6 @@
 #Demo of using Kestrel with F♯
 
-Working with `dotnet cli 1.0.0-beta-002071`
+Working with `dotnet cli 1.0.0-preview2-003121` (aka. RTM)
 
 #How to run
 
