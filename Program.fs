@@ -9,6 +9,7 @@ module Main =
     open Microsoft.AspNetCore.Builder
     open Microsoft.AspNetCore.Http
     open Microsoft.AspNetCore.Hosting
+    open Microsoft.Extensions.Configuration
 
     type Startup() = 
         
@@ -18,14 +19,14 @@ module Main =
                 sprintf "%s %d" "Hello world" (Calc.add 1 2) |> ctx.Response.WriteAsync     
             )
 
-
- 
     [<EntryPoint>]
     let main argv = 
         WebHostBuilder()
             .UseKestrel()
             .UseContentRoot(Directory.GetCurrentDirectory())
-            .UseDefaultHostingConfiguration(argv)
+            .UseConfiguration(ConfigurationBuilder()
+                                .AddCommandLine(argv)
+                                .Build())
             .UseStartup<Startup>()
             .Build()
             .Run()
